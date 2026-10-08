@@ -14,22 +14,23 @@
       <div class="shell header-inner">
         <a class="wordmark" href="#top" aria-label="张翀，返回首页">张翀<span class="wordmark-mark" aria-hidden="true">.</span></a>
         <nav aria-label="主导航">
-          <a href="#research">研究</a>
-          <a href="#experience">经历</a>
-          <a href="#about">关于</a>
-          <a href="#contact">联系</a>
+          <a href="#research" data-i18n="nav.research">研究</a>
+          <a href="#experience" data-i18n="nav.experience">经历</a>
+          <a href="#about" data-i18n="nav.about">关于</a>
+          <a href="#contact" data-i18n="nav.contact">联系</a>
         </nav>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="切换英文">EN</button>
       </div>
     </header>
 
     <main id="main">
       <section class="hero shell" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="hero-meta">中国人民大学 · 经管交叉实验班</p>
-          <h1 id="hero-title">张翀<span class="hero-period" aria-hidden="true">。</span></h1>
-          <p class="hero-lead">在研究、产业与人才之间，<br />寻找值得追问的问题。</p>
-          <p class="hero-description">目前在中国人民大学学习，关注实证研究、AI 与硬科技产业，以及技术团队的人才工作。这里记录我的研究与实践经历。</p>
-          <a class="text-link hero-link" href="#research">查看我的研究 <span aria-hidden="true">↗</span></a>
+          <p class="hero-meta" data-i18n="hero.meta">中国人民大学 · 经管交叉实验班</p>
+          <h1 id="hero-title" data-i18n="hero.name">张翀<span class="hero-period" aria-hidden="true">。</span></h1>
+          <p class="hero-lead" data-i18n="hero.lead">在研究、产业与人才之间，<br />寻找值得追问的问题。</p>
+          <p class="hero-description" data-i18n="hero.description">目前在中国人民大学学习，关注实证研究、AI 与硬科技产业，以及技术团队的人才工作。这里记录我的研究与实践经历。</p>
+          <a class="text-link hero-link" href="#research" data-i18n="hero.cta">查看我的研究 <span aria-hidden="true">↗</span></a>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="orbit orbit-one"></div>
@@ -44,67 +45,74 @@
         </div>
       </section>
 
+      <section class="proof-strip shell" aria-label="关键概览">
+        <div class="proof-item"><strong>3</strong><span data-i18n="proof.research">项研究项目</span></div>
+        <div class="proof-item"><strong>4</strong><span data-i18n="proof.experience">段行业实践</span></div>
+        <div class="proof-item"><strong>3.76</strong><span data-i18n="proof.gpa">/ 4.00 GPA</span></div>
+        <div class="proof-item"><strong>400+</strong><span data-i18n="proof.mapping">名人才 Mapping</span></div>
+      </section>
+
       <section class="section section-research" id="research" aria-labelledby="research-title">
         <div class="shell">
           <div class="section-intro">
-            <p class="section-kicker">Selected research</p>
-            <h2 id="research-title">以方法回应现实问题</h2>
-            <p>从农业可持续性、制造业供应链，到劳动力市场，我尝试用模型与数据理解复杂系统，也关注研究结论如何回应真实的产业与社会问题。</p>
+            <p class="section-kicker" data-i18n="research.kicker">Selected research</p>
+            <h2 id="research-title" data-i18n="research.title">以方法回应现实问题</h2>
+            <p data-i18n="research.intro">从农业可持续性、制造业供应链，到劳动力市场，我尝试用模型与数据理解复杂系统，也关注研究结论如何回应真实的产业与社会问题。</p>
           </div>
           <div class="research-list">
             <article class="research-item">
-              <div class="research-side"><span class="research-type">建模研究</span><span class="research-year">2024</span></div>
+              <div class="research-side"><span class="research-index">01</span><span class="research-type" data-i18n="research.agri.type">建模研究</span><span class="research-year">2024</span></div>
               <div class="research-main">
-                <h3>农业实践的生态与经济影响</h3>
+                <h3 data-i18n="research.agri.title">农业实践的生态与经济影响</h3>
                 <p class="research-subtitle" lang="en">Modeling Ecological and Economic Impacts of Agricultural Practices for Sustainable Farming</p>
-                <p>作为核心成员，负责数据预处理、图表可视化和论文撰写。研究构建多尺度耦合模型系统，结合动态系统理论、毒理学机制与多目标优化方法，量化化学品使用和物种引入对农业生态转型的影响；通过三阶微分食物网模型分析化学干预下的生态动态，利用 Lotka–Volterra 扩展模型评估边缘生境恢复对生态系统稳定性的影响，并在生物多样性、土壤健康与经济效益之间寻找平衡。</p>
-                <p class="research-note">2024 年美国大学生数学建模竞赛 S 奖</p>
+                <p data-i18n="research.agri.body">作为核心成员，负责数据预处理、图表可视化和论文撰写。研究构建多尺度耦合模型系统，结合动态系统理论、毒理学机制与多目标优化方法，量化化学品使用和物种引入对农业生态转型的影响；通过三阶微分食物网模型分析化学干预下的生态动态，利用 Lotka–Volterra 扩展模型评估边缘生境恢复对生态系统稳定性的影响，并在生物多样性、土壤健康与经济效益之间寻找平衡。</p>
+                <p class="research-note" data-i18n="research.agri.note">2024 年美国大学生数学建模竞赛 S 奖</p>
               </div>
             </article>
             <article class="research-item">
-              <div class="research-side"><span class="research-type">实证研究</span></div>
+              <div class="research-side"><span class="research-index">02</span><span class="research-type" data-i18n="research.tax.type">实证研究</span></div>
               <div class="research-main">
-                <h3>财税政策与先进制造业供应链韧性</h3>
-                <p>作为第二作者，基于 CSMAR 数据库的 2015—2023 年中国 A 股先进制造业上市公司数据，构建高维双向固定效应模型，以 2018 年留抵退税政策为准自然实验，使用双重差分识别政策影响，并通过 Python 爬取数字化词频、构建多维 TOPSIS 指数。研究发现，政策通过数字化转型、融资约束缓解和投资水平提升，显著增强企业供应链韧性。</p>
-                <p class="research-note">中国人民大学“创新杯”一等奖</p>
+                <h3 data-i18n="research.tax.title">财税政策与先进制造业供应链韧性</h3>
+                <p data-i18n="research.tax.body">作为第二作者，基于 CSMAR 数据库的 2015—2023 年中国 A 股先进制造业上市公司数据，构建高维双向固定效应模型，以 2018 年留抵退税政策为准自然实验，使用双重差分识别政策影响，并通过 Python 爬取数字化词频、构建多维 TOPSIS 指数。研究发现，政策通过数字化转型、融资约束缓解和投资水平提升，显著增强企业供应链韧性。</p>
+                <p class="research-note" data-i18n="research.tax.note">中国人民大学“创新杯”一等奖</p>
               </div>
             </article>
             <article class="research-item">
-              <div class="research-side"><span class="research-type">劳动研究</span></div>
+              <div class="research-side"><span class="research-index">03</span><span class="research-type" data-i18n="research.age.type">劳动研究</span></div>
               <div class="research-main">
-                <h3>年龄资本还是成本？35 岁年龄歧视对企业绩效的影响</h3>
-                <p>作为第二作者，基于 Becker 经典歧视理论与上市企业招聘文本数据，使用双重去偏机器学习量化企业“35 岁歧视”，分析其对企业绩效的影响机制，并识别劳动资源配置效率与创新能力的中介作用，以及研发投入密集度的调节效应。</p>
-                <p class="research-note">中国人民大学“求是学术”首善立项</p>
+                <h3 data-i18n="research.age.title">年龄资本还是成本？35 岁年龄歧视对企业绩效的影响</h3>
+                <p data-i18n="research.age.body">作为第二作者，基于 Becker 经典歧视理论与上市企业招聘文本数据，使用双重去偏机器学习量化企业“35 岁歧视”，分析其对企业绩效的影响机制，并识别劳动资源配置效率与创新能力的中介作用，以及研发投入密集度的调节效应。</p>
+                <p class="research-note" data-i18n="research.age.note">中国人民大学“求是学术”首善立项</p>
               </div>
             </article>
           </div>
-          <p class="section-footnote">简历中暂未提供公开论文或项目链接；如后续有公开版本，可在此补充。</p>
+          <p class="section-footnote" data-i18n="research.footnote">简历中暂未提供公开论文或项目链接；如后续有公开版本，可在此补充。</p>
         </div>
       </section>
 
       <section class="section section-experience" id="experience" aria-labelledby="experience-title">
         <div class="shell experience-grid">
           <div class="section-intro experience-intro">
-            <p class="section-kicker">Experience</p>
-            <h2 id="experience-title">走进现场，理解行业</h2>
-            <p>在技术团队、投资机构与研究岗位中，我把信息搜集、数据分析、人才连接和团队协作落实到具体项目。</p>
+            <p class="section-kicker" data-i18n="experience.kicker">Experience</p>
+            <h2 id="experience-title" data-i18n="experience.title">走进现场，理解行业</h2>
+            <p data-i18n="experience.intro">在技术团队、投资机构与研究岗位中，我把信息搜集、数据分析、人才连接和团队协作落实到具体项目。</p>
           </div>
           <div class="timeline">
             <article class="timeline-item">
               <div class="timeline-date">2026.01 — 2026.07</div>
-              <div><h3>字节跳动 Seed</h3><p class="timeline-role">AI Infra · HRBP 实习</p><p>支持 Seed-AI Infra 团队校招与社招。校招阶段日均推评简历 10+、评估通过率约 80%、促成 10 人拿到 offer；完成 27 届相关实验室硕博毕业生 400+ 人 Mapping，结合多渠道信息和 CCD 评分，准确率约 90%，并输出 27 届人才报告。社招阶段日均推评约 5 份、通过约 3 份，促成 7 人拿到 offer；同时开展顶级论文作者 Mapping 与竞对人才摸排。</p><p>开发 Lab Mapper 与 Resume Screening Studio，通过调用 MiniMax / OpenAI API 自动化人才 Mapping 与批量评分，减少重复筛选工作。</p></div>
+              <div><h3 data-i18n="experience.bytedance.title">字节跳动 Seed</h3><p class="timeline-role" data-i18n="experience.bytedance.role">AI Infra · HRBP 实习</p><p data-i18n="experience.bytedance.body1">支持 Seed-AI Infra 团队校招与社招。校招阶段日均推评简历 10+、评估通过率约 80%、促成 10 人拿到 offer；完成 27 届相关实验室硕博毕业生 400+ 人 Mapping，结合多渠道信息和 CCD 评分，准确率约 90%，并输出 27 届人才报告。社招阶段日均推评约 5 份、通过约 3 份，促成 7 人拿到 offer；同时开展顶级论文作者 Mapping 与竞对人才摸排。</p><p data-i18n="experience.bytedance.body2">开发 Lab Mapper 与 Resume Screening Studio，通过调用 MiniMax / OpenAI API 自动化人才 Mapping 与批量评分，减少重复筛选工作。</p></div>
             </article>
             <article class="timeline-item">
               <div class="timeline-date">2025.05 — 2025.10</div>
-              <div><h3>九坤创投</h3><p class="timeline-role">投资运营实习生</p><p>独立完成 AI、硬科技、具身智能、先进制造和低空经济新闻与融资资料整理，完成多份人形机器人、机械臂、灵巧手等领域会议及访谈纪要。一个月独立承担 8 个岗位招聘，日均推送简历 10+、约面率 80%，覆盖投资、市场、HR 与投资 VP 等岗位；后带领 2 位 HR 实习生完成招聘 SOP 和多类岗位招聘，并与猎头对接。</p></div>
+              <div><h3 data-i18n="experience.jiukun.title">九坤创投</h3><p class="timeline-role" data-i18n="experience.jiukun.role">投资运营实习生</p><p data-i18n="experience.jiukun.body">独立完成 AI、硬科技、具身智能、先进制造和低空经济新闻与融资资料整理，完成多份人形机器人、机械臂、灵巧手等领域会议及访谈纪要。一个月独立承担 8 个岗位招聘，日均推送简历 10+、约面率 80%，覆盖投资、市场、HR 与投资 VP 等岗位；后带领 2 位 HR 实习生完成招聘 SOP 和多类岗位招聘，并与猎头对接。</p></div>
             </article>
             <article class="timeline-item">
               <div class="timeline-date">2024.09 — 2025.05</div>
-              <div><h3>芯流智库</h3><p class="timeline-role">行业研究实习生</p><p>关注半导体、具身智能、AI 和智能驾驶行业动态，使用 Wind、Bloomberg、公司官网、IT 桔子等渠道系统搜集资料，分析公司财务状态与最新进展，完成数十篇研究与自媒体文章，累计获得数十万阅读。</p></div>
+              <div><h3 data-i18n="experience.xinliu.title">芯流智库</h3><p class="timeline-role" data-i18n="experience.xinliu.role">行业研究实习生</p><p data-i18n="experience.xinliu.body">关注半导体、具身智能、AI 和智能驾驶行业动态，使用 Wind、Bloomberg、公司官网、IT 桔子等渠道系统搜集资料，分析公司财务状态与最新进展，完成数十篇研究与自媒体文章，累计获得数十万阅读。</p></div>
             </article>
             <article class="timeline-item">
               <div class="timeline-date">2024.06 — 2024.09</div>
-              <div><h3>招商证券</h3><p class="timeline-role">投行部债券承做实习生</p><p>协助募集说明书、尽调报告和项目标书的撰写与校对，参与实地尽调、路演材料制作，并分析西安银行、晋能控股集团的偿债能力；使用企查查、Wind、iFinD 等进行风险核查与数据整理。</p></div>
+              <div><h3 data-i18n="experience.cmb.title">招商证券</h3><p class="timeline-role" data-i18n="experience.cmb.role">投行部债券承做实习生</p><p data-i18n="experience.cmb.body">协助募集说明书、尽调报告和项目标书的撰写与校对，参与实地尽调、路演材料制作，并分析西安银行、晋能控股集团的偿债能力；使用企查查、Wind、iFinD 等进行风险核查与数据整理。</p></div>
             </article>
           </div>
         </div>
@@ -113,31 +121,31 @@
       <section class="section section-about" id="about" aria-labelledby="about-title">
         <div class="shell about-grid">
           <div class="section-intro">
-            <p class="section-kicker">About</p>
-            <h2 id="about-title">持续学习，保持好奇</h2>
+            <p class="section-kicker" data-i18n="about.kicker">About</p>
+            <h2 id="about-title" data-i18n="about.title">持续学习，保持好奇</h2>
           </div>
           <div class="about-content">
             <div class="about-block">
-              <h3>教育</h3>
-              <p class="about-strong">中国人民大学</p>
-              <p>经管交叉实验班 · 2023 年 9 月至今</p>
-              <p>绩点 3.76 / 4.00 · 年级排名第 3</p>
+              <h3 data-i18n="about.education.heading">教育</h3>
+              <p class="about-strong" data-i18n="about.education.school">中国人民大学</p>
+              <p data-i18n="about.education.program">经管交叉实验班 · 2023 年 9 月至今</p>
+              <p data-i18n="about.education.gpa">绩点 3.76 / 4.00 · 年级排名第 3</p>
             </div>
             <div class="about-block">
-              <h3>荣誉</h3>
-              <p>曾获中国人民大学三好学生、优秀学生干部、学习优秀二等奖学金、社会工作与志愿服务骨干二等奖学金、学生会优秀志愿者、人才指数科研项目优秀调研员；获中国人民大学足球甲级联赛冠军、“创新杯”主赛道一等奖，并入选“求是学术”首善立项。</p>
+              <h3 data-i18n="about.honors.heading">荣誉</h3>
+              <p data-i18n="about.honors.body">曾获中国人民大学三好学生、优秀学生干部、学习优秀二等奖学金、社会工作与志愿服务骨干二等奖学金、学生会优秀志愿者、人才指数科研项目优秀调研员；获中国人民大学足球甲级联赛冠军、“创新杯”主赛道一等奖，并入选“求是学术”首善立项。</p>
             </div>
             <div class="about-block">
-              <h3>关注与工具</h3>
-              <p>关注实证研究、AI 与硬科技产业、技术人才工作。使用 Python、Stata、Wind、iFinD 和 Bloomberg 进行资料搜集、文本处理、数据分析与可视化；熟悉 MS Office、LaTeX、ChatGPT、Grok，以及秀米、可画、Audition 和 Premiere 等内容与音视频工具。</p>
+              <h3 data-i18n="about.tools.heading">关注与工具</h3>
+              <p data-i18n="about.tools.body">关注实证研究、AI 与硬科技产业、技术人才工作。使用 Python、Stata、Wind、iFinD 和 Bloomberg 进行资料搜集、文本处理、数据分析与可视化；熟悉 MS Office、LaTeX、ChatGPT、Grok，以及秀米、可画、Audition 和 Premiere 等内容与音视频工具。</p>
             </div>
             <div class="about-block">
-              <h3>校园</h3>
-              <p>中国人民大学 GEA 协会骨干成员；劳动人事学院 2023 级本科人力资源管理 2 班班长；学院足球队队员；青年志愿者协会骨干成员；学生会权益部骨干成员；学院学生会实践部副部长。</p>
+              <h3 data-i18n="about.campus.heading">校园</h3>
+              <p data-i18n="about.campus.body">中国人民大学 GEA 协会骨干成员；劳动人事学院 2023 级本科人力资源管理 2 班班长；学院足球队队员；青年志愿者协会骨干成员；学生会权益部骨干成员；学院学生会实践部副部长。</p>
             </div>
             <div class="about-block">
-              <h3>工作方式</h3>
-              <p>重视沟通、团队协作与交付，具备较强的抗压、自驱和时间管理能力，愿意在不确定性中承担任务并持续学习。</p>
+              <h3 data-i18n="about.working.heading">工作方式</h3>
+              <p data-i18n="about.working.body">重视沟通、团队协作与交付，具备较强的抗压、自驱和时间管理能力，愿意在不确定性中承担任务并持续学习。</p>
             </div>
           </div>
         </div>
@@ -145,11 +153,11 @@
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="shell contact-inner">
-          <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">聊聊值得研究的问题。</h2>
-          <p>欢迎交流研究、产业观察与技术人才相关话题。</p>
+          <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
+          <h2 id="contact-title" data-i18n="contact.title">聊聊值得研究的问题。</h2>
+          <p data-i18n="contact.body">欢迎交流研究、产业观察与技术人才相关话题。</p>
           <div class="contact-links">
-            <a class="contact-link" href="mailto:zhangchong050812@ruc.edu.cn">邮箱 <span aria-hidden="true">↗</span></a>
+            <a class="contact-link" href="mailto:zhangchong050812@ruc.edu.cn" data-i18n="contact.email">邮箱 <span aria-hidden="true">↗</span></a>
             <a class="contact-link" href="https://github.com/Zc-RUC" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -157,7 +165,8 @@
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-inner"><span>© 2026 张翀</span><a href="#top">回到顶部 ↑</a></div>
+      <div class="shell footer-inner"><span>© 2026 张翀</span><a href="#top" data-i18n="footer.top">回到顶部 ↑</a></div>
     </footer>
+    <script src="./script.js" defer></script>
   </body>
 </html>
