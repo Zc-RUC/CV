@@ -32,7 +32,9 @@
     'research.age.title': 'Age as capital or cost? How age discrimination at 35 affects firm performance',
     'research.age.body': 'As the second author, I draw on Becker’s classic theory of discrimination and corporate recruitment text data to quantify “age discrimination at 35” with double-debiased machine learning. The study examines how age discrimination affects firm performance, identifies labor-allocation efficiency and innovation capability as mediating mechanisms, and tests R&D intensity as a moderating factor.',
     'research.age.note': 'Qiushi Academic · Shanshou Research Grant',
-    'research.footnote': 'The resume does not currently include public paper or project links. They can be added here when available.',
+    'research.agri.link': 'Read research PDF ↗',
+    'research.age.link': 'Read research PDF ↗',
+    'research.footnote': 'PDF versions are available for two projects; use the links at the end of each entry to read them.',
     'experience.kicker': 'Experience',
     'experience.title': 'Learning industries from the field',
     'experience.intro': 'Across technical teams, investment firms, and research roles, I turn information gathering, data analysis, talent mapping, and collaboration into concrete work.',
@@ -74,6 +76,7 @@
     'contact.title': 'Let’s talk about questions worth studying.',
     'contact.body': 'Open to conversations about research, industry observations, and technical talent.',
     'contact.email': 'Email <span aria-hidden="true">↗</span>',
+    'contact.cv': 'Download CV <span aria-hidden="true">↗</span>',
     'footer.top': 'Back to top ↑'
   };
 
