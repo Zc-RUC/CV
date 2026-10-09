@@ -168,17 +168,19 @@
   const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
   const navSections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
   if (supportsIntersectionObserver && navSections.length) {
+    const navRatios = new Map();
     const navObserver = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      entries.forEach((entry) => navRatios.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0));
+      const visible = [...navRatios.entries()].filter(([, ratio]) => ratio > 0).sort((a, b) => b[1] - a[1]);
       if (!visible.length) return;
-      const currentId = `#${visible[0].target.id}`;
+      const currentId = `#${visible[0][0].id}`;
       navLinks.forEach((link) => {
         const isCurrent = link.getAttribute('href') === currentId;
         link.classList.toggle('is-current', isCurrent);
         if (isCurrent) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
-    }, { threshold: [0.2, 0.45, 0.7], rootMargin: '-18% 0px -58% 0px' });
+    }, { threshold: [0, 0.2, 0.45, 0.7], rootMargin: '-12% 0px -42% 0px' });
     navSections.forEach((section) => navObserver.observe(section));
   }
 
