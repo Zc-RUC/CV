@@ -110,4 +110,102 @@
   toggle?.addEventListener('click', () => {
     applyLanguage(document.body.dataset.language === 'en' ? 'zh' : 'en');
   });
+
+  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const supportsIntersectionObserver = 'IntersectionObserver' in window;
+  const revealTargets = [
+    ...document.querySelectorAll('.section-intro, .proof-item, .research-item, .timeline-item, .about-item, .contact-inner')
+  ];
+
+  revealTargets.forEach((target, index) => {
+    target.classList.add('reveal');
+    target.style.setProperty('--reveal-delay', `${Math.min(index % 5, 4) * 70}ms`);
+  });
+
+  if (prefersReducedMotion || !supportsIntersectionObserver) {
+    revealTargets.forEach((target) => target.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealTargets.forEach((target) => revealObserver.observe(target));
+  }
+
+  const interactiveItems = [...document.querySelectorAll('.timeline-item, .about-item')];
+  interactiveItems.forEach((item) => {
+    item.addEventListener('mouseenter', () => item.classList.add('is-active'));
+    item.addEventListener('mouseleave', () => item.classList.remove('is-active'));
+    item.addEventListener('focusin', () => item.classList.add('is-active'));
+    item.addEventListener('focusout', (event) => {
+      if (!item.contains(event.relatedTarget)) item.classList.remove('is-active');
+    });
+  });
+
+  if (!prefersReducedMotion && supportsIntersectionObserver && interactiveItems.length) {
+    const activeRatios = new Map();
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => activeRatios.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0));
+      let current = null;
+      let highestRatio = 0.2;
+      activeRatios.forEach((ratio, item) => {
+        if (ratio > highestRatio) {
+          current = item;
+          highestRatio = ratio;
+        }
+      });
+      interactiveItems.forEach((item) => {
+        const isHovered = item.matches(':hover') || item.matches(':focus-within');
+        item.classList.toggle('is-active', item === current || isHovered);
+      });
+    }, { threshold: [0.25, 0.45, 0.7], rootMargin: '-20% 0px -45% 0px' });
+    interactiveItems.forEach((item) => activeObserver.observe(item));
+  }
+
+  const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+  const navSections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if (supportsIntersectionObserver && navSections.length) {
+    const navObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (!visible.length) return;
+      const currentId = `#${visible[0].target.id}`;
+      navLinks.forEach((link) => {
+        const isCurrent = link.getAttribute('href') === currentId;
+        link.classList.toggle('is-current', isCurrent);
+        if (isCurrent) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, { threshold: [0.2, 0.45, 0.7], rootMargin: '-18% 0px -58% 0px' });
+    navSections.forEach((section) => navObserver.observe(section));
+  }
+
+  const hero = document.querySelector('.hero');
+  const heroArt = document.querySelector('.hero-art');
+  if (!prefersReducedMotion && hero && heroArt) {
+    let frame = 0;
+    let nextX = 0;
+    let nextY = 0;
+    const renderParallax = () => {
+      frame = 0;
+      heroArt.style.setProperty('--hero-shift-x', `${nextX.toFixed(2)}px`);
+      heroArt.style.setProperty('--hero-shift-y', `${nextY.toFixed(2)}px`);
+    };
+    hero.addEventListener('pointermove', (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
+      const bounds = hero.getBoundingClientRect();
+      nextX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
+      nextY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 10;
+      if (!frame) frame = requestAnimationFrame(renderParallax);
+    });
+    hero.addEventListener('pointerleave', () => {
+      nextX = 0;
+      nextY = 0;
+      if (!frame) frame = requestAnimationFrame(renderParallax);
+    });
+  }
+
+  requestAnimationFrame(() => document.body.classList.add('motion-ready'));
 })();
